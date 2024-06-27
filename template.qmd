@@ -1,0 +1,79 @@
+---
+title: Analyse d’accessibilité multimodale avec R et OpenTripPlanner
+format:
+  # rzine-pdf: default
+  #   keep-tex: true  
+  rzine-html: default
+lang: fr-FR
+date: "2024-06-27"
+authors:
+  - name: Timothée Giraud
+    affiliations:
+      - name: CNRS
+        department: UAR 2414 RIATE
+        address: 8 place Paul Ricoeur
+        city: Paris
+        country: France 
+        postal-code: 75013
+      - Real Madrid
+    orcid: 0000-0000-0000-0000
+    url: https://rcarto.github.io/
+  - name: Hugues Pecout
+    affiliations:
+      - name: CNRS
+        department: UMR 8504 Géographie-cité
+        city: Paris
+        country: France 
+      - PSG
+    orcid: 0000-0000-0000-0000
+    url: https://rcarto.github.io/
+doi: 10.888.222
+abstract: |
+    Cette fiche présente une méthodologie d’analyse de l’accessibilité multimodale d’un territoire à partir des données ouvertes d’offre de transport et de mobilité et du logiciel OpenTripPlanner mobilisé depuis l’environnement R.
+keywords: [ OpenTripPlanner, otp, OpenStreetMap, sf, demo]
+
+---
+
+## Introduction {#sec-intro}
+
+*TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+
+
+Cet article, @CameronTrivedi2013, est chanmé
+
+![Une bien belle image](http://65.109.147.123:4173/interface.png)
+
+
+```{r}
+#| echo: false
+print('vaut plus que 1000 mots')
+```
+
+## COUCOU
+
+### Deuxiè_me nivo
+
+```{r}
+#| fig-width: 5
+#| fig-height: 6
+library(mapsf)
+mf_theme("ink")
+mf_get_mtq() |> 
+  mf_map() |> 
+  mf_map("POP", "prop")
+mf_title("Madinina l'île aux fleurs", tab = FALSE)
+```
+
+
+::: {.callout-warning}
+OUÉ OUÉ
+:::
+
+
+
+# Versions utilisées {.appendix .unnumbered}
+
+```{r session-info}
+#| echo: false
+sessionInfo()
+```
