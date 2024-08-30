@@ -1,45 +1,94 @@
 ---
-title: Analyse d’accessibilité multimodale avec R et OpenTripPlanner
+title: Soumettre un article Rzine
+subtitle: Consignes éditoriales et modèle à suivre
+filters:
+  - wordcount
 format:
   # rzine-pdf: default
   #   keep-tex: true  
   rzine-html: default
 lang: fr-FR
-date: "2024-06-27"
+date: "2024-09-05"
 authors:
-  - name: Timothée Giraud
+  - name: Anonyme 1
     affiliations:
-      - name: CNRS
-        department: UAR 2414 RIATE
-        address: 8 place Paul Ricoeur
+      - name: Comité éditorial Rzine
+        department: Laboratoire 1
+        address: 1 avenue de la recherche reproductible
         city: Paris
         country: France 
         postal-code: 75013
-      - Real Madrid
     orcid: 0000-0000-0000-0000
-    url: https://rcarto.github.io/
-  - name: Hugues Pecout
+    url: https://rzine.fr/
+  - name: Anonyme 2
     affiliations:
-      - name: CNRS
-        department: UMR 8504 Géographie-cité
+      - name: Comité éditorial Rzine
+        department: Laboratoire 2
         city: Paris
         country: France 
-      - PSG
     orcid: 0000-0000-0000-0000
-    url: https://rcarto.github.io/
+    url: https://rzine.fr/
 doi: 10.888.222
 abstract: |
-    Cette fiche présente une méthodologie d’analyse de l’accessibilité multimodale d’un territoire à partir des données ouvertes d’offre de transport et de mobilité et du logiciel OpenTripPlanner mobilisé depuis l’environnement R.
-keywords: [ OpenTripPlanner, otp, OpenStreetMap, sf, demo]
+    Cette fiche présente le modèle Quarto d'un Article Rzine et les consignes éditoriales élémentaires à suivre.
+keywords: [ template, consignes éditoriales, modèle]
 
 ---
 
-## Introduction {#sec-intro}
+# Un article Rzine
+
+Il s'agit d'une publication didactique qui présente une méthodologie, un type d’analyse, une fonctionnalité, ou encore le traitement d’un certain type de données avec le langage R. Un article peut être principalement technique, méthodologique ou thématique ; il peut également couvrir ces trois aspects. Il est évalué par au moins deux personnes ayant les connaissances thématiques nécessaires.
+
+Le premier objectif d’un article consiste à partager de manière pédagogique des méthodes reproductibles applicables en SHS. La publication d’un article est ouverte à toutes et tous, quels que soient son statut et sa discipline. Un article peut être réalisée à plusieurs et présenter une dimension interdisciplinaire.
+
+Télécharger le modèle **[ici]()**
+
+
+# Critères d'acceptation
+
+Afin d’assurer la cohérence et la qualité du contenu des articles Rzine, plusieurs critères d’acceptation ont été définis. Certains de ces critères peuvent conduire au refus immédiat d’une proposition d’article par le comité éditorial, d’autres critères font l’objet d’une analyse contradictoire par plusieurs évaluateur·rice·s.
+
+Les éditeur·rice·s et les évaluateur·rice·s veilleront à ce que :
+
+- la démonstration soit contextualisée (champ disciplinaire d’application) et rigoureuse,
+- le code présenté soit lisible, commenté et reproductible,
+- les packages mobilisés soient brièvement décrits et leur utilisation justifiée,
+- les données ou jeux de données utilisés dans le cadre de la démonstration soient obligatoirement publiés, sourcés et librement réutilisables.
+
+
+::: {.callout-tip collapse="true"}
+
+## Dénombrer le nombre de caractères contenus dans un document Quarto
+
+La bibliothèque `rmdwc` et sa fonction `txtcount()` est utile à cette fin. 
+
+```{r}
+library(rmdwc)
+files <- txtcount("template.qmd")
+files$chars
+```
+
+Ce document Quarto contient **```r files$chars```** caractères, c'est optimal pour une publication Rzine ! 
+
+:::
+
+
+
+
+## Télécharger le modèle
+
+[ici](url à rajouter). Dézipper l'archive qui comprend :
+
+- à la racine un fichier .qmd qui contient l'article principal
+- 
+
+
 
 *TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
 
 
-Cet article, @CameronTrivedi2013, est chanmé
+Pour insérer une image
+
 
 ![Une bien belle image](http://65.109.147.123:4173/interface.png)
 
