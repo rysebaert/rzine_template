@@ -28,11 +28,11 @@ Pour suivre la fiche de style rzine, il est nécessaire d'inclure à votre soumi
 6. **Relecture**. Si votre soumission est validée, un relecteur·rice doté·e des connaissances techniques et thématiques nécessaires sera proposé·e à l’auteur·e dans les 15 jours (vous pouvez aussi proposer des noms=. Rzine est dans une démarche volontariste d’Open Science. La relecture des fiches Rzine est ouverte et transparente. L’identité du ou des relecteur·rice·s et l’ensemble de leurs retours sont publics. Parce qu’une fiche est un document computationnel, l’ensemble du processus se déroule sur GitHub. Vous serez donc invité·e à ouvrir les droits du dépôt GitHub de votre fiche au relecteur·rice désigné·e. Les retours et les demandes d’améliorations se feront directement sur la plateforme GitHub via des issues et des pull-request.
 7. **Publication**. Une fois les demandes d’améliorations prises en compte et la publication validée par l’évaluateur·rice, une fiche de métadonnées associée à la publication vous sera demandée afin d’assurer son référencement sur Rzine.fr. Votre dépôt est ensuite cloné dans le dépôt GitLab Rzine, et la publication déployée depuis celui-ci. Un DOI sera associé à la publication, qui sera également référencée sur HAL et sur Rzine.fr.
 
-<div style="text-align:center">
+<p align="center">
 Ce schéma résume le processus de relecture dans son ensemble. 
 
 <img src="figures/cycle_publi.png" width="500"/>
-</div>
+</p>
 
 
 ## Initier votre article avec GitHub
