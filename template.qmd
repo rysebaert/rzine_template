@@ -2,8 +2,6 @@
 title: Soumettre un article Rzine
 subtitle: Consignes éditoriales et modèle à suivre
 format:
-  # rzine-pdf: default
-  #   keep-tex: true  
   rzine-html: default
 lang: fr-FR
 date: "2024-09-05"
@@ -30,7 +28,6 @@ doi: 10.888.222
 abstract: |
     Cette fiche présente le modèle Quarto d'un Article Rzine et les consignes éditoriales élémentaires à suivre.
 keywords: [ template, consignes éditoriales, modèle]
-
 ---
 
 # Un article Rzine
@@ -53,10 +50,29 @@ Les éditeur·rice·s et les évaluateur·rice·s veilleront à ce que :
 - les packages mobilisés soient brièvement décrits et leur utilisation justifiée,
 - les données ou jeux de données utilisés dans le cadre de la démonstration soient obligatoirement publiés, sourcés et librement réutilisables.
 
+|                | **Critère d'évaluation d'une fiche**                                                                                | **Comité de lecture** | **Relecteur.rice.s** |
+|----------------|---------------------------------------------------------------------------------------------------------------------|:---------------------:|:--------------------:|
+| **Thématique** | Concerne des méthodes applicables aux SHS                                                                           |           X           |           X          |
+| **Thématique** | Intérêt pour la communauté des utilisateurs de R en SHS                                                             |           X           |           X          |
+| **Thématique** | Pas de fiche Rzine similaire déjà produite                                                                          |           X           |                      |
+| **Contenu**    | Présentation des prérequis techniques et méthodologiques                                                            |                       |           X          |
+| **Contenu**    | Contextualisation de l’analyse ou méthode présentée                                                                 |                       |           X          |
+| **Contenu**    | Présentation des prérequis techniques et méthodologiques                                                            |                       |           X          |
+| **Contenu**    | Clarté et rigueur de la démonstration                                                                               |                       |           X          |
+| **Contenu**    | Rédaction dans un français ou un anglais correct                                                                    |                       |           X          |
+| **Contenu**    | Respect des consignes éditoriales détaillées ci-dessous                                                                            |           X           |                      |
+| **Contenu**    | Moins de 85000 caractères (code compris) (`*`)                                                                     |           X           |                      |
+| **Contenu**    | Pas de renvoi publicitaire explicite                                                                                |           X           |                      |
+| **Contenu**    | Acceptation des futures conditions d'utilisation [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/deed.fr) |           X           |                      |
+| **Code**       |  Justification (et stabilité) des packages utilisés `**`                                                           |                       |           X          |
+| **Code**       | Clarté (indentation, commentaire…) et reproductibilité du code présenté                                             |                       | X                    |
+| **Données**    | Données utilisées libres, sourcées et mises à disposition                                                           |           X           |           X          |
+| **Données**    | Respect du Règlement Général sur la Protection des Données                                                          |           X           |           X          |
+
 
 ::: {.callout-tip collapse="true"}
 
-## Dénombrer le nombre de caractères contenus dans un document Quarto
+## `(*)` Dénombrer le nombre de caractères contenus dans un document Quarto
 
 La bibliothèque `rmdwc` et sa fonction `txtcount()` est utile à cette fin. 
 
@@ -66,23 +82,109 @@ files <- txtcount("template.qmd")
 files$chars
 ```
 
-Ce document Quarto contient **```r files$chars```** caractères, c'est optimal pour une publication Rzine ! 
+Ce document Quarto contient **```r as.numeric(files$chars)```** caractères, c'est optimal pour une publication Rzine ! 
+
+:::
+
+::: {.callout-warning}
+
+## `(**)` Favorisez l'usage de bibliothèques disponibles sur le CRAN maintenues par ses auteur.ice.s
 
 :::
 
 
+# Modèle Rzine et contenu
+
+[ici](url à rajouter). Dézippez l'archive qui comprend :
+
+- un document Quarto **index.qmd**, qui contient l'article principal.
+- Un fichier **README.md**, à compléter.
+- Un fichier BibTeX **bibliography.bib**, avec la bibliographie.
+- Un dossier **data**, pour les données mobilisées dans l'article.
+- Un dossier **figures**, pour les éventuelles figures inclues dans l'article. 
+- Un dossier **_extensions**, à ne pas modifier et qui contient les éléments de style de la revue. 
 
 
-## Télécharger le modèle
+## Métadonnées du document (YAML)
 
-[ici](url à rajouter). Dézipper l'archive qui comprend :
+L’en-tête d’un document Quarto (aussi appelé YAML) est délimité par deux lignes de pointillés et contient les métadonnées et les éléments de style du document.
 
-- à la racine un fichier .qmd qui contient l'article principal
-- 
+```
+---
+title: Le titre de votre contribution (obligatoire)
+subtitle: Son sous titre (optionnel)
+format:
+  rzine-html: default (ne pas modifier)
+lang: fr-FR (en-EN si anglais)
+date: "2024-09-05" (date de dernière modification, obligatoire)
+authors:
+  - name: Anonyme 1 (Prénom Nom, obligatoire)
+    affiliations:
+      - name: Comité éditorial Rzine (L'organisme qui vous emploie, optionnel)
+        department: Laboratoire 1 (Votre laboratoire d'appartenance, optionnel)
+        address: 1 avenue de la recherche reproductible (son adresse, optionnel)
+        city: Paris (sa ville d'appartenance, optionnel)
+        country: France  (son pays, optionnel)
+        postal-code: 75013 (son code postal optionnel)
+    orcid: 0000-0000-0000-0000 (vos identifiants ORCID, optionnel)
+    url: https://rzine.fr/ (une URL qui renvoie vers votre blog ou un CV en ligne, optionnel)
+  - name: Si plusieurs auteurs
+abstract: |
+    Un résumé court de votre contribution, qui figurera aussi dans le document REAME.md (obligatoire)
+keywords: [un mot clé, un deuxième mot clé] (obligatoire)
+---
+```
+
+## Le corps du document
+
+Le corps d’un document Quarto comprend deux types de blocs, que l’on peut alterner librement :
+
+- Des blocs de texte brut mis en forme selon la syntaxe markdown
+- Des blocs de code R (appelés *chunks) encadrés par les balises ` : 
+    - Ces chunks peuvent être nommés (recommandé)
+    - De nombreuses options sur le comportement du chunk peuvent être spécifiées.
 
 
+### Les blocs de texte (markdown)
 
-*TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+Le corps du document est constitué de texte en syntaxe Markdown. Le markdown est un langage de balisage léger et très facile à maîtriser. 
+
+Il permet de définir des niveaux de titres, de mettre en forme le texte (gras, italique), d'ajouter des liens cliquables, etc.
+
+Pour en savoir plus, se reporter au [Markdown Guide](https://www.markdownguide.org/cheat-sheet/).
+
+
+### Les blocs de code (chunks)
+
+Dans l'univers de Quarto, le code R. 
+
+A noter qu'un document Quarto peut contenir des blocs de code issus de langages informatiques différents (ObservableJS, Python, etc). A titre d'exemple, vous pouvez consulter [ce document](https://riatecom.github.io/sageo-2023/), basé sur un document Quarto qui combine 3 langages de programmation.  
+
+
+```
+#| echo: true
+#| eval: true
+#| fig-cap: Un plot de base
+#| label: fig-1
+#| fig-height: 3
+#| fig-width: 7
+
+plot(1:10)
+```
+
+
+```{r plot_basique}
+#| echo: true
+#| eval: true
+#| fig-cap: Un plot de base
+#| label: fig-1
+#| fig-height: 3
+#| fig-width: 7
+
+plot(1:10)
+```
+
+
 
 
 Pour insérer une image
