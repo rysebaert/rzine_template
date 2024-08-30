@@ -6,10 +6,11 @@ contributes:
   formats:
     common:
       toc: true
-      filters:
-        - rzine.lua
     html:
+      theme: styles.scss
       css: styles.css
+      tbl-cap-location: margin
+      cap-location: margin
       csl: universite-de-montreal-apa.csl
       title-block-banner: "#0c3762"
       title-block-banner-color: "#f0aa0c"
