@@ -1,8 +1,6 @@
 ---
 title: Soumettre un article Rzine
 subtitle: Consignes éditoriales et modèle à suivre
-filters:
-  - wordcount
 format:
   # rzine-pdf: default
   #   keep-tex: true  
