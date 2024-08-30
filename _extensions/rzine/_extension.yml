@@ -8,6 +8,7 @@ contributes:
       toc: true
     html:
       theme: styles.scss
+      fontsize: 0.9em
       css: styles.css
       tbl-cap-location: margin
       cap-location: margin
