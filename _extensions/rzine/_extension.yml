@@ -16,7 +16,7 @@ contributes:
       title-block-banner: "#0c3762"
       title-block-banner-color: "#f0aa0c"
       license: "CC BY-SA"
-      reference-section-title: Bibliographie
+      reference-section-title: "Bibliographie"
       date-format: long
       hover-citations: true
       hover-footnotes: true
@@ -43,3 +43,10 @@ contributes:
       citation:
         type: article-journal
         container-title: Rzine
+      lang: fr
+      language: 
+        fr:
+          section-title-footnotes: "Glossaire"
+      header-includes: |
+        <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Lato:400,400i,700" type="text/css"/>
+      mainfont: Lato
