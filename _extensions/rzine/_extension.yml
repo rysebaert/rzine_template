@@ -47,6 +47,10 @@ contributes:
       language: 
         fr:
           section-title-footnotes: "Glossaire"
-      header-includes: |
-        <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Lato:400,400i,700" type="text/css"/>
-      mainfont: Lato
+      include-in-header: 
+        text: |
+          <style>
+          h1 {
+          color: #f0aa0c;
+          }
+          </style>
